@@ -100,6 +100,7 @@ $sharingButtonsCss = <<<MYCSS
   top: 40vh;
   display: flex;
   flex-direction: column;
+  z-index: 999; /* just to make sure that it stays on top of the rest, like full-with slideshows or whatever */
 }
 
 /* hereafter all the styling of the buttons */
