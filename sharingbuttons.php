@@ -94,13 +94,20 @@ $modId = 'mod-custom' . $module->id;
 $sharingButtonsCss = <<<MYCSS
 
 /* set a fixed position only for this module */
+/* on mobile icons are "horizontal and bottom-left" but on larger screen we want them to be "vertical and middle-left" */
 #$modId {
   position: fixed;
+  bottom: 0;
   left: 0;
-  top: 40vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   z-index: 999; /* just to make sure that it stays on top of the rest, like full-with slideshows or whatever */
+}
+@media (min-width: 960px) {
+  #$modId {
+    bottom: calc(50vh - 81px); /* the icons height is here 162px, therefore the 162px / 2 = 81px to center it vertically */
+    flex-direction: column;
+  }
 }
 
 /* hereafter all the styling of the buttons */
