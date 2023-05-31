@@ -52,11 +52,13 @@ $modId = 'mod-custom' . $module->id;
   ?>
 
   <!-- Share icon -->
-  <div title="<?php echo $isharebtn; ?>" class="resp-sharing-button resp-sharing-button--small">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-      <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-      <path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z" />
-    </svg>
+  <div title="<?php echo $isharebtn; ?>" class="resp-sharing-button resp-sharing-button--share resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+        <path d="M352 224c53 0 96-43 96-96s-43-96-96-96s-96 43-96 96c0 4 .2 8 .7 11.9l-94.1 47C145.4 170.2 121.9 160 96 160c-53 0-96 43-96 96s43 96 96 96c25.9 0 49.4-10.2 66.6-26.9l94.1 47c-.5 3.9-.7 7.8-.7 11.9c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-25.9 0-49.4 10.2-66.6 26.9l-94.1-47c.5-3.9 .7-7.8 .7-11.9s-.2-8-.7-11.9l94.1-47C302.6 213.8 326.1 224 352 224z" />
+      </svg>
+    </div>
   </div>
 
   <!-- Facebook -->
@@ -179,6 +181,14 @@ $sharingButtonsCss = <<<MYCSS
 .resp-sharing-button__icon--solidcircle {
   fill: #fff;
   stroke: none;
+}
+
+.resp-sharing-button--share {
+  background-color: white;
+  color: black;
+}
+.resp-sharing-button--share svg {
+  fill: black;
 }
 
 .resp-sharing-button--twitter {
