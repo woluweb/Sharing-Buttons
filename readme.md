@@ -17,6 +17,8 @@ Procedure
   - or via Joomla's interface
 - copy the current code in the created file
 - publish a Custom HTML Module in an existing position (for example main-bottom in the Template Cassiopeia)
-- on the Tab 'Advanced' simply select the current Layout (ie 'sharingbuttons')
+- on the Tab 'Advanced'
+  - select the current Layout (ie 'sharingbuttons')
+  - select No Caching (otherwise you might have the sharing url of page X on page Y)
 - clear your cache if necessary
 - that's it!
