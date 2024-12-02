@@ -43,7 +43,7 @@ use Joomla\CMS\Uri\Uri;
 $uri = Uri::getInstance(); // https://docs.joomla.org/URLs_in_Joomla
 $url = $uri->toString();
 $sitename = htmlspecialchars($app->get('sitename'), ENT_QUOTES, 'UTF-8');
-$isharebtn = 'Utilisez les boutons ci-dessous pour partager sur les réseaux sociaux ';
+$isharebtn = 'Utilisez les boutons ci-contre pour partager sur les réseaux sociaux ';
 $ishare = 'Je partage via ';
 $modId = 'mod-custom' . $module->id;
 
@@ -63,23 +63,23 @@ $modId = 'mod-custom' . $module->id;
         </div>
     </div>
 
+    <!-- LinkedIn -->
+    <a title="<?php echo $ishare; ?>LinkedIn" class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>&amp;title=<?php echo $sitename; ?>&amp;summary=<?php echo $sitename; ?>&amp;source=<?php echo $url; ?>" target="_blank" rel="noopener" aria-label="">
+        <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
+            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z" />
+                </svg>
+            </div>
+        </div>
+    </a>
+
     <!-- Facebook -->
     <a title="<?php echo $ishare; ?>Facebook" class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=<?php echo $url; ?>" target="_blank" rel="noopener" aria-label="">
         <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small">
             <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z" />
-                </svg>
-            </div>
-        </div>
-    </a>
-
-    <!-- Twitter -->
-    <a title="<?php echo $ishare; ?>Twitter" class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=<?php echo $sitename; ?>&amp;url=<?php echo $url; ?>" target="_blank" rel="noopener" aria-label="">
-        <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
-            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z" />
                 </svg>
             </div>
         </div>
@@ -96,12 +96,23 @@ $modId = 'mod-custom' . $module->id;
         </div>
     </a>
 
-    <!-- LinkedIn -->
-    <a title="<?php echo $ishare; ?>LinkedIn" class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>&amp;title=<?php echo $sitename; ?>&amp;summary=<?php echo $sitename; ?>&amp;source=<?php echo $url; ?>" target="_blank" rel="noopener" aria-label="">
-        <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small">
+    <!-- Mastodon https://mastodonshare.com/ -->
+    <a title="<?php echo $ishare; ?>X" class="resp-sharing-button__link" href="https://mastodonshare.com/?text=<?php echo $sitename; ?>&amp;url=<?php echo $url; ?>" target="_blank" rel="noopener" aria-label="">
+        <div class="resp-sharing-button resp-sharing-button--mastodon resp-sharing-button--small">
             <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M6.5 21.5h-5v-13h5v13zM4 6.5C2.5 6.5 1.5 5.3 1.5 4s1-2.4 2.5-2.4c1.6 0 2.5 1 2.6 2.5 0 1.4-1 2.5-2.6 2.5zm11.5 6c-1 0-2 1-2 2v7h-5v-13h5V10s1.6-1.5 4-1.5c3 0 5 2.2 5 6.3v6.7h-5v-7c0-1-1-2-2-2z" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                <path d="m18.5,6.87c0-3.95-2.59-5.11-2.59-5.11-1.31-.6-3.55-.85-5.88-.87h-.06c-2.33.02-4.57.27-5.88.87,0,0-2.59,1.16-2.59,5.11,0,.91-.02,1.99.01,3.14.09,3.87.71,7.68,4.28,8.62,1.65.44,3.06.53,4.2.47,2.07-.11,3.23-.74,3.23-.74l-.07-1.5s-1.48.47-3.14.41c-1.64-.06-3.38-.18-3.64-2.2-.02-.18-.04-.37-.04-.57,0,0,1.61.39,3.66.49,1.25.06,2.42-.07,3.61-.22,2.28-.27,4.27-1.68,4.52-2.97.39-2.02.36-4.94.36-4.94Zm-3.05,5.09h-1.9v-4.65c0-.98-.41-1.48-1.24-1.48-.91,0-1.37.59-1.37,1.76v2.54h-1.89v-2.54c0-1.17-.46-1.76-1.37-1.76-.82,0-1.24.5-1.24,1.48v4.65h-1.9v-4.79c0-.98.25-1.76.75-2.33.52-.58,1.19-.87,2.03-.87.97,0,1.71.37,2.19,1.12l.47.79.47-.79c.49-.75,1.22-1.12,2.19-1.12.84,0,1.51.29,2.03.87.5.58.75,1.35.75,2.33v4.79Z"></path>
+            </svg>
+            </div>
+        </div>
+    </a>
+
+    <!-- Bluesky https://docs.bsky.app/docs/advanced-guides/intent-links -->
+    <a title="<?php echo $ishare; ?>Bluesky" class="resp-sharing-button__link" href="https://bsky.app/intent/compose?text=<?php echo $sitename; ?>%0A<?php echo $url; ?>" target="_blank" rel="noopener" aria-label="">
+        <div class="resp-sharing-button resp-sharing-button--bluesky resp-sharing-button--small">
+            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                  <path d="M9.993,9.149c-.772-1.495-2.865-4.288-4.813-5.662-1.866-1.317-2.58-1.09-3.043-.878-.54.246-.637,1.075-.637,1.563s.265,4.003.444,4.587c.579,1.939,2.628,2.595,4.519,2.382.096-.014.193-.029.294-.039-.096.014-.198.029-.294.039-2.768.41-5.233,1.418-2.001,5.011,3.55,3.675,4.866-.786,5.541-3.053.675,2.262,1.452,6.564,5.474,3.053,3.024-3.053.83-4.601-1.939-5.011-.096-.01-.198-.024-.294-.039.101.014.198.024.294.039,1.89.212,3.945-.444,4.519-2.382.174-.588.444-4.099.444-4.587s-.096-1.317-.637-1.563c-.468-.212-1.177-.439-3.043.878-1.963,1.379-4.056,4.167-4.827,5.662h0Z"></path>
                 </svg>
             </div>
         </div>
@@ -146,7 +157,7 @@ $sharingButtonsCss = <<<MYCSS
 }
 @media (min-width: 960px) {
   #$modId {
-    bottom: calc(50vh - 81px); /* the icons height is here 162px, therefore the 162px / 2 = 81px to center it vertically */
+    bottom: calc(50vh - 129px); /* the icons height is here 258px, therefore the 258px / 2 = 129px to center it vertically */
     flex-direction: column;
   }
 }
@@ -204,101 +215,6 @@ $sharingButtonsCss = <<<MYCSS
   fill: black;
 }
 
-.resp-sharing-button--twitter {
-  background-color: #55acee;
-}
-
-.resp-sharing-button--twitter:hover {
-  background-color: #2795e9;
-}
-
-.resp-sharing-button--pinterest {
-  background-color: #bd081c;
-}
-
-.resp-sharing-button--pinterest:hover {
-  background-color: #8c0615;
-}
-
-.resp-sharing-button--facebook {
-  background-color: #3b5998;
-}
-
-.resp-sharing-button--facebook:hover {
-  background-color: #2d4373;
-}
-
-.resp-sharing-button--tumblr {
-  background-color: #35465C;
-}
-
-.resp-sharing-button--tumblr:hover {
-  background-color: #222d3c;
-}
-
-.resp-sharing-button--reddit {
-  background-color: #5f99cf;
-}
-
-.resp-sharing-button--reddit:hover {
-  background-color: #3a80c1;
-}
-
-.resp-sharing-button--google {
-  background-color: #dd4b39;
-}
-
-.resp-sharing-button--google:hover {
-  background-color: #c23321;
-}
-
-.resp-sharing-button--linkedin {
-  background-color: #0077b5;
-}
-
-.resp-sharing-button--linkedin:hover {
-  background-color: #046293;
-}
-
-.resp-sharing-button--email {
-  background-color: #777;
-}
-
-.resp-sharing-button--email:hover {
-  background-color: #5e5e5e;
-}
-
-.resp-sharing-button--xing {
-  background-color: #1a7576;
-}
-
-.resp-sharing-button--xing:hover {
-  background-color: #114c4c;
-}
-
-.resp-sharing-button--whatsapp {
-  background-color: #25D366;
-}
-
-.resp-sharing-button--whatsapp:hover {
-  background-color: #1da851;
-}
-
-.resp-sharing-button--hackernews {
-  background-color: #FF6600;
-}
-.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   
-  background-color: #FB6200;
-}
-
-.resp-sharing-button--vk {
-  background-color: #507299;
-}
-
-.resp-sharing-button--vk:hover {
-  background-color: #43648c;
-}
-
 /* my own customization from here, overriding some of the values above. Feel free to clean according to your needs */
 
 .resp-sharing-button--facebook {
@@ -312,17 +228,6 @@ $sharingButtonsCss = <<<MYCSS
   border-color: #2d4373;
 }
 
-.resp-sharing-button--twitter {
-  background-color: #55acee;
-  border-color: #55acee;
-}
-
-.resp-sharing-button--twitter:hover,
-.resp-sharing-button--twitter:active {
-  background-color: #2795e9;
-  border-color: #2795e9;
-}
-
 .resp-sharing-button--x {
     background-color: #080808;
     border-color: #080808;
@@ -332,6 +237,28 @@ $sharingButtonsCss = <<<MYCSS
 .resp-sharing-button--x:active {
     background-color: #303030;
     border-color: #303030;
+}
+
+.resp-sharing-button--bluesky {
+  background-color: #0085ff;
+  border-color: #0085ff;
+}
+
+.resp-sharing-button--bluesky:hover,
+.resp-sharing-button--bluesky:active {
+  background-color: #208bfe;
+  border-color: #208bfe;
+}
+
+.resp-sharing-button--mastodon {
+  background-color: #6364ff;
+  border-color: #6364ff;
+}
+
+.resp-sharing-button--mastodon:hover,
+.resp-sharing-button--mastodon:active {
+  background-color: #563acc;
+  border-color: #563acc;
 }
 
 .resp-sharing-button--email {
