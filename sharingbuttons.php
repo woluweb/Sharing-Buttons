@@ -97,7 +97,7 @@ $modId = 'mod-custom' . $module->id;
     </a>
 
     <!-- Mastodon https://mastodonshare.com/ -->
-    <a title="<?php echo $ishare; ?>X" class="resp-sharing-button__link" href="https://mastodonshare.com/?text=<?php echo $sitename; ?>&amp;url=<?php echo $url; ?>" target="_blank" rel="noopener" aria-label="">
+    <a title="<?php echo $ishare; ?>Mastodon" class="resp-sharing-button__link" href="https://mastodonshare.com/?text=<?php echo $sitename; ?>&amp;url=<?php echo $url; ?>" target="_blank" rel="noopener" aria-label="">
         <div class="resp-sharing-button resp-sharing-button--mastodon resp-sharing-button--small">
             <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
